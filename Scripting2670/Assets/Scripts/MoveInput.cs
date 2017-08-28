@@ -5,23 +5,13 @@ using System;
 
 public class MoveInput : MonoBehaviour {
 
-    Action KeyAction;
-	
-	private void Start () {
-        KeyAction = Move;
-		
-	}
+    public static Action<float> KeyAction;
 
-    void Move (){
-         print("Left Arrow");
-    }
-	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if  (KeyAction !=null)
         {
-           
-            KeyAction();
+            KeyAction(Input.GetAxis("Horizontal"));
         }
 	}
 }

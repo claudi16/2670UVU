@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1761964435
+  randomSeed: -939435948
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3916,7 +3916,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 916065067
+  randomSeed: 1556945753
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7183,7 +7183,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -363532965
+  randomSeed: -200668231
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -11015,7 +11015,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1782641834
+  randomSeed: -1198123308
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -14278,6 +14278,7 @@ GameObject:
   - component: {fileID: 1775461898}
   - component: {fileID: 1775461897}
   - component: {fileID: 1775461899}
+  - component: {fileID: 1775461900}
   m_Layer: 12
   m_Name: Character
   m_TagString: Player
@@ -14329,6 +14330,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87146e574549b094c8ab737e6dbdafce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1775461900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1775461896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd2c9b3a7f4b45ba96636caa5eaae89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1791437400
