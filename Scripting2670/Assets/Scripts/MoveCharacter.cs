@@ -13,8 +13,15 @@ public class MoveCharacter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		cc = GetComponent<CharacterController>();
-		MoveInput.KeyAction += Move;
+
+			PlayButton.Play += OnPlay;
 	}
+
+	void OnPlay() {
+		MoveInput.KeyAction += Move;
+		PlayButton.Play -= OnPlay;
+	}
+	
 
 	// Update is called once per frame
 	void Move (float _movement) {

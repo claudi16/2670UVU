@@ -8,7 +8,12 @@ public class AnimateCharacter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anims = GetComponent<Animator>();
+		PlayButton.Play += OnPlay;
+	}
+
+	void OnPlay() {
 		MoveInput.KeyAction += Animate;
+		PlayButton.Play -= OnPlay;
 	}
 	
 	private void Animate (float obj)
