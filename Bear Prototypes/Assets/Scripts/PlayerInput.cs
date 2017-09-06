@@ -19,6 +19,7 @@ public class PlayerInput : MonoBehaviour {
             JumpAction();
         
         }
+
                 
     }
 }
