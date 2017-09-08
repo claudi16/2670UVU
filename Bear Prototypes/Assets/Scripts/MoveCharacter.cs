@@ -25,34 +25,18 @@ public class MoveCharacter : MonoBehaviour {
 		{
 		tempMove.y -= gravity*Time.deltaTime;
 		tempMove.x = _movement*speed*Time.deltaTime;
+		if (cc.isGrounded){
+			jumpScore = 0;
+		}
 		cc.Move(tempMove);	
 	}
 
 	void Jump()
 	{
-		tempMove.y = jumpHeight;
-		jumpScore++;
-
-		if (cc.isGrounded){
-			jumpScore = 0;
-			jumpHeight = 0.3f;
-			print(jumpScore);
-		}
-		if(!cc.isGrounded && jumpScore < maxJump){
+		if(jumpScore < 1){
+			tempMove.y = jumpHeight;
 			jumpScore++;
 		}
-		if(!cc.isGrounded && jumpScore >= maxJump){
-			jumpHeight = 0;
-		}
-		/*else{
-			if (jumpScore <= maxJump){ 
-					jumpScore++;
-			}
-			if (jumpScore >= maxJump){
-					jumpHeight = 0;
-			}
-		}*/
-
 	}
 
 
