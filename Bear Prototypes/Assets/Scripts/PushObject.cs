@@ -8,7 +8,10 @@ public class PushObject : MonoBehaviour {
 	public static bool fallen = false;
 
 	void OnControllerColliderHit(ControllerColliderHit hit){
-		fallen = true;
+		if(hit.gameObject.tag == "Box"){
+			print("ayy lmao");
+		}
+	/*	fallen = true;
 		Rigidbody body = hit.collider.attachedRigidbody;
 
 	if(body == null || body.isKinematic)
@@ -20,13 +23,13 @@ public class PushObject : MonoBehaviour {
 	body.velocity = pushForce*pushDirection;
 	test();
 	}
-
+	
+	//have boy freeze until tree has fallen over
 	void test(){
-
 	if(fallen == true){
 	GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotationX|RigidbodyConstraints.FreezeRotationZ;
 
-		}
+		}*/
 	}
 }
 

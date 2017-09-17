@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class LedgeTrigger : MonoBehaviour {
 
-	public GameObject Tree;
-	private Rigidbody rb;
+	public GameObject fallen;
+	public GameObject trigger;
 
-	void Start(){
-		Tree = GameObject.Find("Tree");
-		rb = Tree.GetComponent<Rigidbody>();
-	}
-
-	public void OnTriggerEnter(Collider Tree){
-		if(Tree.name == "Tree"){
-			rb.isKinematic = true;
+	public void OnTriggerEnter(Collider fallenobj){
+		if(fallenobj.gameObject.tag == "Fallen"){
+		fallen.GetComponent<Rigidbody>().isKinematic = true;
+		fallen.GetComponent<Rigidbody>().useGravity = false;
+		trigger.SetActive(false);
 		}
 	}
 }

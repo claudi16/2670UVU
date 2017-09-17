@@ -8,10 +8,10 @@ public class MoveCharacter : MonoBehaviour {
 	Vector3 tempMove;
 
 	public float speed = 4;
-	public float gravity = 1;
+	public float gravity = 1f;
 	public float jumpHeight = 0.3f;
 	private int jumpScore = 0;
-	private int maxJump = 1;
+	public static bool swim = false;
 
 	// Use this for initialization
 	void Start () 
@@ -23,22 +23,46 @@ public class MoveCharacter : MonoBehaviour {
 
 	void Move (float _movement) 
 		{
-		tempMove.y -= gravity*Time.deltaTime;
+		tempMove.y -= gravity*0.7f*Time.deltaTime;
 		tempMove.x = _movement*speed*Time.deltaTime;
 		if (cc.isGrounded){
 			jumpScore = 0;
 		}
+		
 		cc.Move(tempMove);	
+
+		if (swim == true){
+		gravity = 0.4f;
+		speed = 2;
+		}
+		if(swim == false){
+		gravity = 1f;
+		speed = 4;
+		}
 	}
 
 	void Jump()
 	{
-		if(jumpScore < 1){
+		if(jumpScore < 1 && swim == false){
+			jumpHeight = 0.3f;
 			tempMove.y = jumpHeight;
 			jumpScore++;
 		}
+		if(swim == true){
+			jumpHeight = 0.15f;
+			tempMove.y = jumpHeight;
+		}
 	}
 
-
-	
+	void OnTriggerEnter(Collider water)
+	{
+		if(water.gameObject.tag == "Water"){
+			swim = true;
+		}
+	}
+	void OnTriggerExit(Collider water){
+		if(water.gameObject.tag == "Water"){
+			swim = false;
+		}
+	}
 }
