@@ -1,0 +1,3 @@
+using UnityEngine.AI;
+
+//before class [RequireCoponent(typeof(NavMeshAgent))]
